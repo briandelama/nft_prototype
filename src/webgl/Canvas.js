@@ -10,6 +10,8 @@ import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler";
 import { LoadingManager } from "./loadingManager/loadingManager";
 import Stats from "stats-js";
 
+const model = new URL("/model/untitled.glb", import.meta.url);
+
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
@@ -89,7 +91,7 @@ export class Canvas {
     this.rectLight1.rotation.z = -Math.PI / 2;
     this.scene.add(this.rectLight1);
 
-    this.gltfLoader.load("/webgl/untitled.glb", (gltf) => {
+    this.gltfLoader.load(model.pathname, (gltf) => {
       this.handleGltf(gltf);
       // this.handleGltfSurface(gltf);
       this.isLoaded = true;
