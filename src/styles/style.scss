@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fonts";
+
+.verticle-text-left {
+  writing-mode: vertical-lr;
+}
+
+.verticle-text-right {
+  writing-mode: vertical-rl;
+}
