@@ -5,12 +5,14 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { RectAreaLightUniformsLib } from "three/examples/jsm/lights/RectAreaLightUniformsLib.js";
 import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 import { Lights } from "./lights/Lights";
-import { BloomEffect, BlendFunction, GridEffect, EffectComposer, EffectPass, NoiseEffect, RenderPass } from "postprocessing";
+import { GridEffect, EffectComposer, EffectPass, NoiseEffect, RenderPass } from "postprocessing";
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler";
 import { LoadingManager } from "./loadingManager/loadingManager";
 import Stats from "stats-js";
 
-const model = new URL("/model/untitled.glb", import.meta.url);
+import model from "../model/untitled.glb";
+
+console.log(model);
 
 const sizes = {
   width: window.innerWidth,
@@ -91,7 +93,7 @@ export class Canvas {
     this.rectLight1.rotation.z = -Math.PI / 2;
     this.scene.add(this.rectLight1);
 
-    this.gltfLoader.load(model.pathname, (gltf) => {
+    this.gltfLoader.load(model, (gltf) => {
       this.handleGltf(gltf);
       // this.handleGltfSurface(gltf);
       this.isLoaded = true;
