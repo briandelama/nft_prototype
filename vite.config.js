@@ -14,5 +14,5 @@ export default defineConfig({
     emptyOutDir: true,
   },
   publicDir: "public",
-  assetsInclude: ["**/*.glb"],
+  assetsInclude: ["**/*.glb", "**/*.wasm"],
 });

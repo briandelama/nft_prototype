@@ -83,7 +83,7 @@ export class Canvas {
     // this.scene.add(this.ambientLight);
 
     this.dracoLoader = new DRACOLoader(this.loadingManager.loadingManager);
-    this.dracoLoader.setDecoderPath("/webgl/draco/");
+    this.dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
 
     this.gltfLoader = new GLTFLoader(this.loadingManager.loadingManager);
     this.gltfLoader.setDRACOLoader(this.dracoLoader);
